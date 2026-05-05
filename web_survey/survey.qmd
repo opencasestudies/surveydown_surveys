@@ -97,11 +97,11 @@ If you have different thoughts for different case studies, we kindly ask that yo
 
 **For more information**: You may also contact the Fred Hutch Cancer Center IRB Office if you have questions about your rights as a participant/parent of a study participant. Contact the IRB if you feel you have not been treated fairly or if you have other concerns. An IRB is a group that reviews the study to protect your rights as a research participant. (Phone: 206-667-5900 or Email: irodirector@fredhutch.org Director of Institutional Review Office)
 
-```{r}
+```{r consent_page}
 sd_question(
   type   = 'mc',
   id     = 'consent1',
-  label  = "1. Are you 18 or over? You cannot participate in this survey if you are under 18.",
+  label  = "Are you 18 or over? You cannot participate in this survey if you are under 18.",
   option = c('Yes' = 'yes', 'No'  = 'no')
 )
 
@@ -116,7 +116,7 @@ sd_next()
 :::
 
 ::: {id=role_page .sd-page}
-```{r}
+```{r role_page}
 sd_question(
   type = 'mc',
   id = 'role',
@@ -144,12 +144,133 @@ We would like to know your thoughts about how we can create content to better se
 :::
 
 <!-- ============================================================ -->
+<!-- EDUCATOR BRANCH                                              -->
+<!-- ============================================================ -->
+
+::: {id=educator_main .sd-page}
+
+```{r educator_main_page}
+sd_question(
+  type = 'mc_multiple',
+  id = 'educator_brought',
+  label = "What specifically brought you to the case studies? (select all that apply)",
+  option = c(
+    "General interest in teaching material about statistics" = 'stats_general',
+    "Interested in teaching about a specific statistical topic (paired t-test, regression, etc.)" = 'stats_specific',
+    "General interest in teaching materials about data science/data analysis" = 'ds_general',
+    "Interested in teaching about a specific data science skill (such as creating a dashboard)" = 'ds_specific',
+    "General interest in teaching materials about R programming" = 'r_general',
+    "General interest in teaching materials about the tidyverse" = 'tidyverse_general',
+    "General interest in teaching materials about public health" = 'ph_general',
+    "Interested in teaching about a specific public health topic (such as mental health, obesity etc.)" = 'ph_specific',
+    "General interest in Bioinformatics topics" = 'bioinfo_general',
+    "Interested in specific Bioinformatics topic" = 'bioinfo_specific',
+    "Other" = 'other'
+  )
+)
+
+sd_question(
+  type = 'text',
+  id = 'educator_brought_other',
+  label = "If other, please specify:"
+)
+
+sd_question(
+  type = 'mc_multiple',
+  id = 'student_types',
+  label = "What type of students do you teach? (select all that apply)",
+  option = c(
+    "Graduate students"      = 'graduate',
+    "Undergraduate students" = 'undergraduate',
+    "High school students"   = 'high_school',
+    "Middle school students" = 'middle_school',
+    "Other"                  = 'other'
+  )
+)
+
+sd_question(
+  type = 'text',
+  id = 'student_types_other',
+  label = "If other, please specify:"
+)
+
+# !Change: 1:5 to 1:10 in keeping with typical net promoter score questions
+sd_question(
+  type = 'slider',
+  id = 'educator_recommend',
+  label = "How likely are you to recommend the case studies to others?",
+  option = c(
+    "0 - Not at all likely" = 0,
+    "1" = 1,
+    "2"          = 2,
+    "3"          = 3,
+    "4" = 4,
+    "5" = 5,
+    "6" = 6,
+    "7" = 7,
+    "8" = 8,
+    "9" = 9,
+    "Extremely likely - 10" = 10
+  )
+)
+
+sd_question(
+  type = 'mc_multiple',
+  id = 'educator_case_studies_seen',
+  label = "What case study(ies) have you looked at? (select all that apply)",
+  option = c(
+    "Obesity: https://www.opencasestudies.org/ocs-bp-rural-and-urban-obesity/" = 'obesity',
+    "Diet: https://www.opencasestudies.org/ocs-bp-diet/" = 'diet',
+    "School shootings: https://www.opencasestudies.org/ocs-bp-school-shootings-dashboard/" = 'school_shootings',
+    "Multicollinearity and RTC laws (wrangling): https://www.opencasestudies.org/ocs-bp-RTC-wrangling/" = 'rtc_wrangling',
+    "Multicollinearity and RTC laws (analysis): https://www.opencasestudies.org/ocs-bp-RTC-analysis/" = 'rtc_analysis',
+    "Predicting air pollution: https://www.opencasestudies.org/ocs-bp-air-pollution/" = 'air_pollution',
+    "CO2 emissions: https://www.opencasestudies.org/ocs-bp-co2-emissions/" = 'co2',
+    "Youth disconnection: https://www.opencasestudies.org/ocs-bp-youth-disconnection/" = 'youth_disconnection',
+    "Youth mental health: https://www.opencasestudies.org/ocs-bp-youth-mental-health/" = 'youth_mental_health',
+    "Opioid shipments in the US: https://www.opencasestudies.org/ocs-bp-opioid-rural-urban/" = 'opioids',
+    "Vaping behaviours among US youths: https://www.opencasestudies.org/ocs-bp-vaping-case-study/" = 'vaping',
+    "None" = 'none',
+    "Other" = 'other'
+  )
+)
+
+sd_question(
+  type = 'text',
+  id = 'educator_case_studies_seen_other',
+  label = "If other, please specify:"
+)
+
+sd_question(
+  type = 'mc',
+  id = 'educator_used_before',
+  label = "Have you already used our case studies or the data from our case studies to teach?",
+  option = c(
+    "Yes"   = 'yes',
+    "No"    = 'no',
+    "Other" = 'other'
+  )
+)
+
+sd_question(
+  type = 'text',
+  id = 'educator_used_before_other',
+  label = "If other, please specify:"
+)
+
+sd_next()
+```
+:::
+
+<!-- ---- USED BEFORE = YES branch ---- -->
+
+<!-- ============================================================ -->
 <!-- END SURVEY / SCREENOUTS                                      -->
 <!-- ============================================================ -->
 
 ::: {id=end .sd-page}
 ## Thank you for taking this survey!
-```{r}
+```{r end_page}
 sd_close()
 ```
 :::

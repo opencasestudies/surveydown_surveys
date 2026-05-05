@@ -45,7 +45,7 @@ server <- function(input, output, session) {
     input$consent2 == "no" ~ "consent_screenout",
     
     # Role-based branching
-    input$role == "educator"     ~ "end",
+    input$role == "educator"     ~ "educator_main",
     input$role == "student"      ~ "end",
     input$role == "self_learner" ~ "end",
     input$role == "other"        ~ "other_role_end"
@@ -54,7 +54,11 @@ server <- function(input, output, session) {
   # ── Conditional SHOW logic ─────────────────────────────────────────────────
   sd_show_if(
     # Show "other" text fields only when "Other" is selected
-    input$role == "other"                                          ~ "role_other"
+    input$role == "other"                                          ~ "role_other",
+    "other" %in% input$educator_brought                            ~ "educator_brought_other",
+    "other" %in% input$student_types                               ~ "student_types_other",
+    "other" %in% input$educator_case_studies_seen                  ~ "educator_case_studies_seen_other",
+    input$educator_used_before == "other"                          ~ "educator_used_before_other"
   )
   
   # Run surveydown server and define database
