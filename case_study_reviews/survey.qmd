@@ -490,7 +490,7 @@ sd_question(
 sd_question(
   type   = 'mc',
   id     = 'ethical_considerations',
-  label  = 'Is there anything about the case study that could be improved in terms of ethical considerations?'
+  label  = 'Is there anything about the case study that could be improved in terms of ethical considerations?',
   option = c(
     'Yes' = 'yes',
     'No'  = 'no'
@@ -510,7 +510,7 @@ sd_question(
   label  = 'Have the authors created disclaimers when difficult or traumatic topics are covered?',
   option = c(
     'Yes' = 'yes',
-    'No'  = 'no,
+    'No'  = 'no',
     'NA'  = 'not_applicable'
   )
 )
@@ -528,7 +528,7 @@ sd_question(
   label  = 'Have the authors provided helpful links related to difficult or traumatic topics? For example, consider this [case study](https://www.opencasestudies.org/ocs-bp-youth-mental-health/#Additional_Information) (scrolling down to the pink section): example provides additional information about national hotlines for mental health and suicide preventation are included.',
   option = c(
     'Yes' = 'yes',
-    'No'  = 'no,
+    'No'  = 'no',
     'NA'  = 'not_applicable'
   )
 )
@@ -537,7 +537,7 @@ sd_question(
 sd_question(
   type  = 'textarea',
   id    = 'relevant_diff_topic_resources_explained',
-  label = 'Please provide any helpful links that you would recommend including or say NA if you don't have any.'
+  label = 'Please provide any helpful links that you would recommend including or say NA if you do not have any.'
 )
 ```
 
