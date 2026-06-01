@@ -247,7 +247,7 @@ sd_question(
 sd_question(
   type   = 'mc',
   id     = 'class_use',
-  label  = 'Can you envision using this in your class?',
+  label  = 'Can you envision using this in a class?',
   option = c(
     'Yes' = '1',
     'No'  = '0'
