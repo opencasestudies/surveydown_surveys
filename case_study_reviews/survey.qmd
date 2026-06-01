@@ -114,7 +114,7 @@ sd_question(
 sd_question(
   type = 'textarea',
   id = 'compilation_error',
-  label = 'Please provide the error message or a description of the compilation error. If you would prefer to provide a screenshot, please email it or open an issue in the appropriate GitHub repository and provide the link to the issue here.'
+  label = 'Please provide the error message or a description of the compilation error. If you would prefer to provide a screenshot, please email it or open an issue in the appropriate GitHub repository.'
 )
 
 
