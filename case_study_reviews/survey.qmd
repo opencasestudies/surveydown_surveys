@@ -204,11 +204,11 @@ sd_question(
   )
 )
 
-#question to provide details if tidyverse_equiv is Yes/1.
+#question to provide details if newer_equiv is Yes/1.
 sd_question(
   type  = 'textarea',
-  id    = 'tidyverse_equiv_explained',
-  label = 'Please list the packages or functions and their newer tidyverse equivalents.'
+  id    = 'newer_equiv_explained',
+  label = 'Please list the packages or functions and their newer equivalents.'
 )
 
 sd_question(
