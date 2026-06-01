@@ -46,7 +46,7 @@ We create and curate example guides using real-world data to demonstrate data sc
 
 The case studies are for demonstrative purposes only and do not necessarily show the best way to analyze the data utilized but rather showcase a specific method or concept using data that is relevant, challenging, and interesting. We hope that our case studies can be useful as a teaching tool in the classroom and as standalone examples as a supplement to the classroom or for independent learners.
 
-This guide is intended to help you provide reviews for case studies. Please consider the following topics and questions as well as our [code of conduct](https://docs.google.com/document/d/1E3K2sGlOdTMcZnBmIF7OceJWrUMWXpDC3slWygaury4/edit?usp=sharing). Please provide feedback to authors either here or as a PR on GitHub. Please contact us if you have questions or concerns!
+This guide is intended to help you provide reviews for case studies. Please consider the following topics and questions as well as our [code of conduct](https://docs.google.com/document/d/1E3K2sGlOdTMcZnBmIF7OceJWrUMWXpDC3slWygaury4/edit?usp=sharing). **Please provide feedback to authors here** as we are collecting data about the general review process. Feel free to provide an additional partner PR on GitHub with specific changes if you wish. Please contact us if you have questions or concerns!
 
 :::
 
