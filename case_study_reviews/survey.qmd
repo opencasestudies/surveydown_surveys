@@ -46,7 +46,7 @@ We create and curate example guides using real-world data to demonstrate data sc
 
 The case studies are for demonstrative purposes only and do not necessarily show the best way to analyze the data utilized but rather showcase a specific method or concept using data that is relevant, challenging, and interesting. We hope that our case studies can be useful as a teaching tool in the classroom and as standalone examples as a supplement to the classroom or for independent learners.
 
-This guide is intended to help you provide reviews for case studies. Please consider the following topics and questions as well as our [code of conduct](https://docs.google.com/document/d/1E3K2sGlOdTMcZnBmIF7OceJWrUMWXpDC3slWygaury4/edit?usp=sharing). **Please provide feedback to authors here** as we are collecting data about the general review process. Feel free to provide an additional partner PR on GitHub with specific changes if you wish. Please contact us if you have questions or concerns!
+This guide is intended to help you provide reviews for case studies. Please consider the following topics and questions as well as our [code of conduct](https://docs.google.com/document/d/1E3K2sGlOdTMcZnBmIF7OceJWrUMWXpDC3slWygaury4/edit?usp=sharing). **Please provide feedback to authors here** as we are collecting data about the general review process. Feel free to open issues describing specific problems or provide an additional partner PR on GitHub with specific changes if you wish. Please contact us if you have questions or concerns!
 
 :::
 
@@ -150,7 +150,7 @@ sd_question(
 sd_question(
   type  = 'textarea',
   id    = 'gen_org_suggestions',
-  label = "What are your suggestions for changing the organization of the case study? Please note that all case studies have a standard general organization (e.g., the sections Motivation, Context, Limitations, Data, Import, Wrangling, Visualization, Analysis, Summary) and we're looking for deeper feedback."
+  label = "What are your suggestions for changing the organization of the case study? Please note that all case studies have a standard general organization (e.g., the sections like Motivation, Context, Limitations, Data, Import, Wrangling, Visualization, Analysis, Summary) and we're looking for deeper feedback."
 )
 
 sd_question(
@@ -380,7 +380,7 @@ sd_question(
 sd_question(
   type  = 'textarea',
   id    = 'interactive_components',
-  label = 'If the authors were to add interactive components or additional interactive components using learnr for independent leaners, what do you think would be especially helpful?'
+  label = 'If the authors were to add interactive components or additional interactive components using `learnr` for independent leaners, what do you think would be especially helpful?'
 )
 ```
 
@@ -537,7 +537,7 @@ sd_question(
 sd_question(
   type  = 'textarea',
   id    = 'relevant_diff_topic_resources_explained',
-  label = 'Please provide any helpful links that you would recommend including or say NA if you do not have any.'
+  label = 'Please provide any helpful links that you would recommend including or type NA if you do not have any.'
 )
 ```
 
