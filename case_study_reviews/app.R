@@ -42,45 +42,36 @@ server <- function(input, output, session) {
     #page2
     input$which_case_study == "other" ~ "which_case_study_other",
     #page3
-    input$compilation == "0" ~ "compilation_error",
-    input$overall_suggestions == "1" ~ "overall_suggestions_to_improve",
-    input$main_viz == "1" ~ "main_viz_suggestions",
-    input$technical_errors == "1" ~ "technical_errors_explained",
-    input$stat_errors == "1" ~ "stat_errors_explained",
-    input$newer_equiv == "1" ~ "newer_equiv_explained",
-    input$resource_links == "1" ~ "resource_links_explained",
+    input$compilation == "no" ~ "compilation_error",
+    input$overall_suggestions == "yes" ~ "overall_suggestions_to_improve",
+    input$gen_org == "yes" ~ "gen_org_suggestions",
+    input$main_viz == "yes" ~ "main_viz_suggestions",
+    input$technical_errors == "yes" ~ "technical_errors_explained",
+    input$stat_errors == "yes" ~ "stat_errors_explained",
+    input$newer_equiv == "yes" ~ "newer_equiv_explained",
+    input$resource_links == "yes" ~ "resource_links_explained",
     #page4
-    input$class_use == "0" ~ "class_use_explained",
-    input$topic_more == "1" ~ "topic_more_explained",
-    input$topic_less == "1" ~ "topic_less_explained",
-    input$limiting_barriers == "1" ~ "limiting_barriers_explained",
+    input$class_use == "no" ~ "class_use_explained",
+    input$topic_more == "yes" ~ "topic_more_explained",
+    input$topic_less == "yes" ~ "topic_less_explained",
+    input$limiting_barriers == "yes" ~ "limiting_barriers_explained",
     #page5
-    input$standalone_missing == "1" ~ "standalone_missing_explained",
-    input$code_needs_more == "1" ~ "code_needs_more_explained",
+    input$standalone_missing == "yes" ~ "standalone_missing_explained",
+    input$code_needs_more == "yes" ~ "code_needs_more_explained",
     #page6
-    input$alt_text_present == "0" ~ "alt_text_present_explained",
-    input$alt_text_useful == "0" ~ "alt_text_useful_explained",
-    input$color_palette == "0" ~ "color_palette_explained",
-    input$gen_accessibility == "1" ~ "gen_accessibility_explained",
+    input$alt_text_present == "no" ~ "alt_text_present_explained",
+    input$alt_text_useful == "no" ~ "alt_text_useful_explained",
+    input$color_palette == "no" ~ "color_palette_explained",
+    input$gen_accessibility == "yes" ~ "gen_accessibility_explained",
     #page7
-    input$human_data == "1" ~ "data_sex_descriptions",
-    input$human_data == "1" ~ "data_collection_description",
-    input$human_data == "1" ~ "data_limitations",
-    input$human_data == "1" ~ "data_race_descriptions",
-    input$data_race_descriptions == "0" ~ "data_sampling",
-    input$data_race_descriptions == "0" ~ "label_inclusion",
-    input$data_race_descriptions == "0" ~ "label_origin",
-    input$data_race_descriptions == "0" & input$data_sampling == "1" & input$label_inclusion == "1" & input$label_origin == "1" ~ "needed_race_bp_limit",
-    input$ai_use == "1" ~ "ai_bias",
-    input$ai_use == "1" ~ "inclusive_dataset",
-    input$gen_inclusivity == "1" ~ "gen_inclusivity_explained",
+    input$data_methods_limits == "no" ~ "data_methods_limits_explained",
+    input$ethical_considerations == "yes" ~ "ethical_considerations_explained",
+    input$disclaimers == "no" ~ "disclaimers_explained",
+    input$relevant_diff_topic_resources == "no" ~ "relevant_diff_topic_resources_explained",
     #page8
-    input$data_methods_limits == "0" ~ "data_methods_limits_explained",
-    input$data_methods_limits_needed == "1" ~ "data_methods_limits_needed_explained",
-    #page9
-    input$reproducibility_sections == "0" ~ "reproducibility_sections_explained",
-    input$reproducibility_tools_tips == "1" ~ "reproducibility_tools_tips_explained",
-    input$reproducibility_code_robust == "1" ~ "reproducibility_code_robust_explained"
+    input$reproducibility_sections == "no" ~ "reproducibility_sections_explained",
+    input$reproducibility_tools_tips == "yes" ~ "reproducibility_tools_tips_explained",
+    input$reproducibility_code_robust == "yes" ~ "reproducibility_code_robust_explained"
   )
 
   # Run surveydown server and define database

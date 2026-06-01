@@ -66,7 +66,7 @@ sd_question(
     'Spatial Transcriptomics'                   = 'spatial',
     'Latent Variables and Matrix Factorization' = 'latent_vars',
     'Temporal analysis'                         = 'temporal',
-    'Biocontainers'                             = 'biocontainers',
+    'Containers'                                = 'containers',
     'Version Control and Code Review'           = 'version_control',
     'Big Data'                                  = 'big_data',
     'Other'                                     = 'other'
@@ -105,15 +105,15 @@ sd_question(
   id     = 'compilation',
   label  = 'Does the case study compile? (please try knitting the document on your own)',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#question to provide error if compilation question response is No / 0.
+#question to provide error if compilation question response is No.
 sd_question(
-  type = 'textarea',
-  id = 'compilation_error',
+  type  = 'textarea',
+  id    = 'compilation_error',
   label = 'Please provide the error message or a description of the compilation error. If you would prefer to provide a screenshot, please email it or open an issue in the appropriate GitHub repository.'
 )
 
@@ -123,12 +123,12 @@ sd_question(
   id     = 'overall_suggestions',
   label  = 'Do you have suggestions on how to improve?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#question to provide sugestions if overall_suggestions response is Yes / 1.
+#question to provide sugestions if overall_suggestions response is Yes.
 sd_question(
   type  = 'textarea',
   id    = 'overall_suggestions_to_improve',
@@ -137,23 +137,33 @@ sd_question(
 
 
 sd_question(
-  type  = 'textarea',
-  id    = 'gen_org',
-  label = 'What did you think of the general organization of the case study? Would you make any changes?'
+  type   = 'mc',
+  id     = 'gen_org',
+  label  = 'Considering the general organization of the case study, would you suggest making any changes?',
+  option = c(
+    'Yes' = 'yes',
+    'No'  = 'no'
+  )
 )
 
+#question to provide suggestions if gen_org response is Yes.
+sd_question(
+  type  = 'textarea',
+  id    = 'gen_org_suggestions',
+  label = "What are your suggestions for changing the organization of the case study? Please note that all case studies have a standard general organization (e.g., the sections Motivation, Context, Limitations, Data, Import, Wrangling, Visualization, Analysis, Summary) and we're looking for deeper feedback."
+)
 
 sd_question(
   type   = 'mc',
   id     = 'main_viz',
   label  = 'Would you make any changes to the main visualizations?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#question to provide suggestions if main_viz response is Yes / 1.
+#question to provide suggestions if main_viz response is Yes.
 sd_question(
   type  = 'textarea',
   id    = 'main_viz_suggestions',
@@ -165,12 +175,12 @@ sd_question(
   id     = 'technical_errors',
   label  = 'Do you see any technical errors?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#question to provide details/description of technical errors if technical_errors is Yes /1.
+#question to provide details/description of technical errors if technical_errors is Yes.
 sd_question(
   type  = 'textarea',
   id    = 'technical_errors_explained',
@@ -182,12 +192,12 @@ sd_question(
   id     = 'stat_errors',
   label  = 'Do you see any statistical errors?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#question to provide details/description of statistical errors if stat_errors is Yes/1.
+#question to provide details/description of statistical errors if stat_errors is Yes.
 sd_question(
   type  = 'textarea',
   id    = 'stat_errors_explained',
@@ -199,12 +209,12 @@ sd_question(
   id     = 'newer_equiv',
   label  = 'Do you see any packages or functions that you think might have a newer equivalent? (We generally try to use tidyverse where possible.)',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#question to provide details if newer_equiv is Yes/1.
+#question to provide details if newer_equiv is Yes.
 sd_question(
   type  = 'textarea',
   id    = 'newer_equiv_explained',
@@ -212,26 +222,20 @@ sd_question(
 )
 
 sd_question(
-  type  = 'mc',
-  id    = 'resource_links',
-  label = 'Do you dislike any of the links used or do you have suggestions for other resources that should be included?',
+  type   = 'mc',
+  id     = 'resource_links',
+  label  = 'Do you dislike any of the links used or do you have suggestions for other resources that should be included?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#question to provide details if resource_links is Yes/1.
+#question to provide details if resource_links is Yes.
 sd_question(
   type  = 'textarea',
   id    = 'resource_links_explained',
   label = 'Please describe any links or resources that are included that you would remove or any other resources that you would recommend should be included.'
-)
-
-sd_question(
-  type  = 'textarea',
-  id    = 'interactivity_thoughts',
-  label = 'The authors could potentially add interactive elements using learnr if they have not already done so. What do you think would help you in the classroom?'
 )
 
 ```
@@ -249,12 +253,12 @@ sd_question(
   id     = 'class_use',
   label  = 'Can you envision using this in a class?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#question to explain if class_use is No/0
+#question to explain if class_use is No
 sd_question(
   type  = 'textarea',
   id    = 'class_use_explained',
@@ -262,7 +266,7 @@ sd_question(
 )
 
 sd_question(
-  type  ='textarea',
+  type  = 'textarea',
   id    = 'length_depth',
   label = 'What do you think about the **length** and the level of **depth**?'
 )
@@ -270,31 +274,31 @@ sd_question(
 sd_question(
   type   = 'mc',
   id     = 'topic_more',
-  label  = 'Are there any topics that need more explanation?',
+  label  = 'Are there any topics that need **more** explanation?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#question to explain if topic_more is Yes/1
+#question to explain if topic_more is Yes
 sd_question(
   type  = 'textarea',
-  id    ='topic_more_explained',
+  id    = 'topic_more_explained',
   label = 'Which topics need more explanation?'
 )
 
 sd_question(
   type   = 'mc',
   id     = 'topic_less',
-  label  = 'Are there any topics that need less explanation?',
+  label  = 'Are there any topics that need **less** explanation?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#question to explain if topic_less is Yes/1
+#question to explain if topic_less is Yes
 sd_question(
   type  = 'textarea',
   id    = 'topic_less_explained',
@@ -302,16 +306,22 @@ sd_question(
 )
 
 sd_question(
-  type  = 'mc',
-  id    = 'limiting_barriers',
-  label = 'Are there any limiting barriers for you to teach using this case study?',
+  type  = 'textarea',
+  id    = 'interactivity_thoughts',
+  label = 'The authors could potentially add interactive elements using `learnr` if they have not already done so. What do you think would help you in the classroom?'
+)
+
+sd_question(
+  type   = 'mc',
+  id     = 'limiting_barriers',
+  label  = 'Are there any limiting barriers for you to teach using this case study?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#question to explain if limiting_barriers is Yes/1
+#question to explain if limiting_barriers is Yes
 sd_question(
   type  = 'textarea',
   id    = 'limiting_barriers_explained',
@@ -334,16 +344,16 @@ sd_question(
 ```{r}
 
 sd_question(
-  type  = 'mc',
-  id    = 'standalone_missing',
-  label = 'Reflecting on this case study, if you found it on your own and wanted to learn about these topics, is there anything that is missing or that could use more explanation?',
+  type   = 'mc',
+  id     = 'standalone_missing',
+  label  = 'Reflecting on this case study, if you found it on your own and wanted to learn about these topics, is there anything that is missing or that could use more explanation?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#question to explain if standalone_missing is Yes/1
+#question to explain if standalone_missing is Yes
 sd_question(
   type  = 'textarea',
   id    = 'standalone_missing_explained',
@@ -355,12 +365,12 @@ sd_question(
   id     = 'code_needs_more',
   label  = 'Does any of the code need further explanation?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#question to explain if code_needs_more is Yes / 1
+#question to explain if code_needs_more is Yes
 sd_question(
   type  = 'textarea',
   id    = 'code_needs_more_explained',
@@ -386,12 +396,13 @@ sd_question(
   id     = 'alt_text_present',
   label  = 'Do all images have alternative text?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes'    = 'yes',
+    'No'     = 'no',
+    'Unsure' = 'unsure'
   )
 )
 
-#question if alt_text_present is No/0
+#question if alt_text_present is No
 sd_question(
   type  = 'textarea',
   id    = 'alt_text_present_explained',
@@ -403,12 +414,13 @@ sd_question(
   id     = 'alt_text_useful',
   label  = 'Is the alternative text useful and appropriate for describing all necessary details of the image?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes'    = 'yes',
+    'No'     = 'no',
+    'Unsure' = 'unsure'
   )
 )
 
-#question if alt_text_useful is No/0
+#question if alt_text_useful is No
 sd_question(
   type  = 'textarea',
   id    = 'alt_text_useful_explained',
@@ -416,16 +428,16 @@ sd_question(
 )
 
 sd_question(
-  type  = 'mc',
-  id    = 'color_palette',
-  label = 'Do all plots use colors that are distinguishable to those with color vision deficiency (CVD)?',
+  type   = 'mc',
+  id     = 'color_palette',
+  label  = 'Do all plots use colors that are distinguishable to those with color vision deficiency (CVD)?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#question if color_palette is No/0
+#question if color_palette is No
 sd_question(
   type  = 'textarea',
   id    = 'color_palette_explained',
@@ -433,12 +445,12 @@ sd_question(
 )
 
 sd_question(
-  type  = 'mc',
-  id    = 'gen_accessibility',
-  label = 'Any other suggestions to improve accessibility?',
+  type   = 'mc',
+  id     = 'gen_accessibility',
+  label  = 'Any other suggestions to improve accessibility?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
@@ -451,167 +463,8 @@ sd_question(
 
 :::
 
+
 ::: {.sd_page id=page7}
-
-## Inclusivity of `r sd_output("which_case_study", type = 'label_option')` Case Study
-
-```{r}
-sd_question(
-  type   = 'mc',
-  id     = 'human_data',
-  label  = 'Does the case study use human data?',
-  option = c(
-    'Yes' = '1',
-    'No'  = '0'
-  )
-)
-
-#questions for if human_data is Yes/1
-sd_question(
-  type   = 'mc',
-  id     = 'data_sex_descriptions',
-  label  = 'Are the descriptions of gender, sex, and sexuality following best practices for awareness of the larger spectrum of identities? See [https://www.nih.gov/nih-style-guide/sex-gender-sexuality](https://www.nih.gov/nih-style-guide/sex-gender-sexuality) for more information.',
-  option = c(
-    'Yes' = '1',
-    'No'  = '0',
-    'NA'  = '99'
-  )
-)
-
-sd_question(
-  type   = 'mc',
-  id     = 'data_collection_description',
-  label  = 'Is there a mention of more inclusive data collection practices?',
-  option = c(
-    'Yes' = '1',
-    'No'  = '0',
-    'NA'  = '99'
-  )
-)
-
-sd_question(
-  type   = 'mc',
-  id     = 'data_limitations',
-  label  = 'Is there a mention of any limitations of the data?',
-  option = c(
-    'Yes' = '1',
-    'No'  = '0'
-  )
-)
-
-sd_question(
-  type   = 'mc',
-  id     = 'data_race_descriptions',
-  label  = 'Are the descriptions of racial or ethnic groups following best practices for awareness of the limitations of these labels?',
-  option = c(
-    'Yes' = '1',
-    'No'  = '0',
-    'NA'  = '99'
-  )
-)
-
-sd_question(
-  type   = 'mc',
-  id     = 'data_sampling',
-  label  = 'Is there mention that important observations may be missed when more specific communities are not examined (i.e., not all indigenous tribes have the same genetic background but are often examined together for health risk)?',
-  option = c(
-    'Yes' = '1',
-    'No'  = '0',
-    'NA'  = '99'
-  )
-)
-
-sd_question(
-  type   = 'mc',
-  id     = 'label_inclusion',
-  label  = 'Is there mention that the labels may not include all relevant groups?',
-  option = c(
-    'Yes' = '1',
-    'No'  = '0',
-    'NA'  = '99'
-  )
-)
-
-sd_question(
-  type  = 'mc',
-  id    = 'label_origin',
-  label = 'Is there mention about how these labels came to be? See [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10519151/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10519151/) for more information.',
-  option = c(
-    'Yes' = '1',
-    'No'  = '0',
-    'NA'  = '99'
-  )
-)
-
-sd_question(
-  type  = 'textarea',
-  id    = 'needed_race_bp_limit',
-  label = 'Please describe changes that should be made to improve the descriptions of racial or ethnic groups.'
-)
-
-sd_question(
-  type   = 'mc',
-  id     = 'intersectionality',
-  label  = 'Is intersectionality mentioned if it is in any way relevant?',
-  option = c(
-    'Yes' = '1',
-    'No'  = '0',
-    'NA'  = '99'
-  )
-)
-
-sd_question(
-  type   = 'mc',
-  id     = 'ai_use',
-  label  = 'Does this case study use AI?',
-  option = c(
-    'Yes' = '1',
-    'No'  = '0'
-  )
-)
-
-#questions for if AI is used
-sd_question(
-  type   = 'mc',
-  id     = 'ai_bias',
-  label  = 'Is there a mention of the potential biases of AI use and the consequences of these biases?',
-  option = c(
-    'Yes' = '1',
-    'No'  = '0'
-  )
-)
-
-sd_question(
-  type   = 'mc',
-  id     = 'inclusive_dataset',
-  label  = 'Were efforts made or discussions included regarding using a more inclusive dataset?',
-  option = c(
-    'Yes' = '1',
-    'No'  = '0'
-  )
-)
-
-sd_question(
-  type   = 'mc',
-  id     = 'gen_inclusivity',
-  label  = 'Any other suggestions to improve inclusivity?',
-  option = c(
-    'Yes' = '1',
-    'No'  = '0'
-  )
-)
-
-sd_question(
-  type  = 'textarea',
-  id    = 'gen_inclusivity_explained',
-  label = 'Please provide your additional suggestions to improve inclusivity.'
-)
-
-```
-
-:::
-
-::: {.sd_page id=page8}
 
 ## Ethics of `r sd_output("which_case_study", type = 'label_option')` Case Study
 
@@ -620,45 +473,35 @@ sd_question(
 sd_question(
   type   = 'mc',
   id     = 'data_methods_limits',
-  label  = 'Are the limitations of the data and methods adequately described?',
+  label  = 'Are the limitations of the data and methods both comprehensively enumerated and adequately described?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#Question if data_methods_limits is No/0
+#Question if data_methods_limits is No
 sd_question(
   type  = 'textarea',
   id    = 'data_methods_limits_explained',
-  label = 'Of the limitations that were included -- What limitations were not adequately described? How can they be improved?'
+  label = 'Please provide any additional limitations of the data or methods that need to be included or suggestions on how to improve the description of the included limitations which were not adequately described.'
 )
 
 sd_question(
   type   = 'mc',
-  id     = 'data_methods_limits_needed',
-  label  = 'Are there additional limitations of the data or methods that need to be included?',
-  option = c(
-    'Yes' = '1',
-    'No'  = '0'
-  )
-)
-
-#Question if data_methods_limits_needed is Yes/1
-sd_question(
-  type  = 'textarea',
-  id    = 'data_methods_limits_needed_explained',
-  label = 'Please describe what additional limits of the data or methods should be included.'
-)
-
-sd_question(
-  type   = 'mc',
-  id     = 'mindful_language',
+  id     = 'ethical_considerations',
   label  = 'Is there anything about the case study that could be improved in terms of ethical considerations?'
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
+)
+
+#Question if ethical_considerations is Yes
+sd_question(
+  type  = 'textarea',
+  id    = 'ethical_considerations_explained',
+  label = 'Please explain what could be improved in regards to the ethical considerations.'
 )
 
 sd_question(
@@ -666,10 +509,17 @@ sd_question(
   id     = 'disclaimers',
   label  = 'Have the authors created disclaimers when difficult or traumatic topics are covered?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0',
-    'NA'  = '99'
+    'Yes' = 'yes',
+    'No'  = 'no,
+    'NA'  = 'not_applicable'
   )
+)
+
+#Question if disclaimers is No
+sd_question(
+  type  = 'textarea',
+  id    = 'disclaimers_explained',
+  label = 'What disclaimer(s) should we add?'
 )
 
 sd_question(
@@ -677,17 +527,23 @@ sd_question(
   id     = 'relevant_diff_topic_resources',
   label  = 'Have the authors provided helpful links related to difficult or traumatic topics? For example, consider this [case study](https://www.opencasestudies.org/ocs-bp-youth-mental-health/#Additional_Information) (scrolling down to the pink section): example provides additional information about national hotlines for mental health and suicide preventation are included.',
   option = c(
-    'Yes' = '1',
-    'No'  = '0',
-    'NA'  = '99'
+    'Yes' = 'yes',
+    'No'  = 'no,
+    'NA'  = 'not_applicable'
   )
 )
 
+#Question if relevant_diff_topic_resources is No
+sd_question(
+  type  = 'textarea',
+  id    = 'relevant_diff_topic_resources_explained',
+  label = 'Please provide any helpful links that you would recommend including or say NA if you don't have any.'
+)
 ```
 
 :::
 
-::: {.sd_page id=page9}
+::: {.sd_page id=page8}
 
 ## Reproducibility of `r sd_output("which_case_study", type = 'label_option')` Case Study
 
@@ -697,12 +553,12 @@ sd_question(
   id     = 'reproducibility_sections',
   label  = 'Are all sections thoroughly described well enough for learners and instructors to reproduce the results?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#Question if reproducibility_sections is No/0
+#Question if reproducibility_sections is No
 sd_question(
   type   = 'textarea',
   id     = 'reproducibility_sections_explained',
@@ -714,8 +570,8 @@ sd_question(
   id     = 'session_info',
   label  = 'Is session information shared?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
@@ -724,12 +580,12 @@ sd_question(
   id     = 'reproducibility_tools_tips',
   label  = 'Any missing relevant reproducibility tips or tools?',
   option = c(
-    'Yes' = '1',
-    'No'  = '0'
+    'Yes' = 'yes',
+    'No'  = 'no'
   )
 )
 
-#Question if reproducibility_tools_tips is Yes/1
+#Question if reproducibility_tools_tips is Yes
 sd_question(
   type  = 'textarea',
   id    = 'reproducibility_tools_tips_explained',
@@ -741,22 +597,22 @@ sd_question(
   id     = 'reproducibility_code_robust',
   label  = 'Could any of the code be written in a more programmatic method to better ensure reproducibility over time as data sources may change?',
   option = c(
-    'Yes' = '1',
-    'No ' = '0'
+    'Yes' = 'yes',
+    'No ' = 'no'
   )
 )
 
-#Question if reproducibility_code_robust is Yes/1
+#Question if reproducibility_code_robust is Yes
 sd_question(
-  type = 'textarea',
-  id = 'reproducibility_code_robust_explained',
+  type  = 'textarea',
+  id    = 'reproducibility_code_robust_explained',
   label = 'What code specifically would you recommend writing in a more programmatic method?'
 )
 ```
 
 :::
 
-::: {.sd_page id=page10}
+::: {.sd_page id=page9}
 
 ## Free Response of `r sd_output("which_case_study", type = 'label_option')` Case Study
 
@@ -780,4 +636,3 @@ sd_close()
 ```
 
 :::
-
