@@ -308,7 +308,7 @@ sd_question(
 sd_question(
   type  = 'textarea',
   id    = 'interactivity_thoughts',
-  label = 'The authors could potentially add interactive elements using `learnr` if they have not already done so. What do you think would help you in the classroom?'
+  label = 'The authors should have included question prompts to help with instruction and to help learners think more deeply about topics. Are there any additional questions or other features that would help you teach this in the classroom?'
 )
 
 sd_question(
