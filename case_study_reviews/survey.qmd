@@ -654,7 +654,7 @@ sd_question(
 sd_question(
   type   = 'mc',
   id     = 'mindful_language',
-  label  = 'Does it appear as if the case study authors have considered limitations of the case study or data in terms of how the field could do better in general to be more inclusive and mindful in the data usage and language descriptions of certain demographics? For example:\n- Being mindful of LBGTQ+ individuals\n- Being mindful of more specific ethnic groups\n- Being mindful of intersectionality',
+  label  = 'Is there anything about the case study that could be improved in terms of ethical considerations?'
   option = c(
     'Yes' = '1',
     'No'  = '0'
