@@ -197,7 +197,7 @@ sd_question(
 sd_question(
   type   = 'mc',
   id     = 'tidyverse_equiv',
-  label  = 'Do you see any packages or functions that you think might have a newer tidyverse equivalent?',
+  label  = 'Do you see any packages or functions that you think might have a newer equivalent? (We generally try to use tidyverse where possible.)',
   option = c(
     'Yes' = '1',
     'No'  = '0'
