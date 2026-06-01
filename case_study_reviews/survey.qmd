@@ -258,7 +258,7 @@ sd_question(
 sd_question(
   type  = 'textarea',
   id    = 'class_use_explained',
-  label = 'What changes to this case study would make it more likely for you to use in your class?'
+  label = 'What changes to this case study would make it more likely for you to use in a class?'
 )
 
 sd_question(
