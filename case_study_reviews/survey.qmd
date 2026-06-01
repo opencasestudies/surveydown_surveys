@@ -577,23 +577,6 @@ sd_question(
 
 sd_question(
   type   = 'mc',
-  id     = 'reproducibility_tools_tips',
-  label  = 'Any missing relevant reproducibility tips or tools?',
-  option = c(
-    'Yes' = 'yes',
-    'No'  = 'no'
-  )
-)
-
-#Question if reproducibility_tools_tips is Yes
-sd_question(
-  type  = 'textarea',
-  id    = 'reproducibility_tools_tips_explained',
-  label = 'What relevant reproducibility tips or tools should be included?'
-)
-
-sd_question(
-  type   = 'mc',
   id     = 'reproducibility_code_robust',
   label  = 'Could any of the code be written in a more programmatic method to better ensure reproducibility over time as data sources may change?',
   option = c(
@@ -607,6 +590,23 @@ sd_question(
   type  = 'textarea',
   id    = 'reproducibility_code_robust_explained',
   label = 'What code specifically would you recommend writing in a more programmatic method?'
+)
+
+sd_question(
+  type   = 'mc',
+  id     = 'reproducibility_tools_tips',
+  label  = 'Any missing relevant reproducibility tips or tools?',
+  option = c(
+    'Yes' = 'yes',
+    'No'  = 'no'
+  )
+)
+
+#Question if reproducibility_tools_tips is Yes
+sd_question(
+  type  = 'textarea',
+  id    = 'reproducibility_tools_tips_explained',
+  label = 'What relevant reproducibility tips or tools should be included?'
 )
 ```
 

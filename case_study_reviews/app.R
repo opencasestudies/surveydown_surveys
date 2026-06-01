@@ -70,8 +70,8 @@ server <- function(input, output, session) {
     input$relevant_diff_topic_resources == "no" ~ "relevant_diff_topic_resources_explained",
     #page8
     input$reproducibility_sections == "no" ~ "reproducibility_sections_explained",
-    input$reproducibility_tools_tips == "yes" ~ "reproducibility_tools_tips_explained",
-    input$reproducibility_code_robust == "yes" ~ "reproducibility_code_robust_explained"
+    input$reproducibility_code_robust == "yes" ~ "reproducibility_code_robust_explained",
+    input$reproducibility_tools_tips == "yes" ~ "reproducibility_tools_tips_explained"
   )
 
   # Run surveydown server and define database
