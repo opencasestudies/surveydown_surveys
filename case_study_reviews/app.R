@@ -47,7 +47,7 @@ server <- function(input, output, session) {
     input$main_viz == "1" ~ "main_viz_suggestions",
     input$technical_errors == "1" ~ "technical_errors_explained",
     input$stat_errors == "1" ~ "stat_errors_explained",
-    input$tidyverse_equiv == "1" ~ "tidyverse_equiv_explained",
+    input$newer_equiv == "1" ~ "newer_equiv_explained",
     input$resource_links == "1" ~ "resource_links_explained",
     #page4
     input$class_use == "0" ~ "class_use_explained",
