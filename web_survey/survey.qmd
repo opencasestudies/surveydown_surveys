@@ -1,0 +1,270 @@
+---
+# General Settings
+format: html
+echo: false
+warning: false
+
+# Theme Settings
+theme: default
+barposition: top
+footer-left: "Made with [surveydown](https://surveydown.org)"
+footer-right: '[<i class="bi bi-github"></i> Source Code](https://github.com/surveydown-dev/template_default)'
+
+# Survey Settings
+use-cookies: false
+auto-scroll: false
+rate-survey: false
+system-language: en
+highlight-unanswered: true
+highlight-color: blue
+capture-metadata: true
+all-questions-required: false
+required_questions:
+  - consent1
+  - consent2
+  - role
+---
+
+```{r}
+library(surveydown)
+```
+
+::: {id=consentpage .sd-page}
+
+# Bio Open Case Study Survey
+
+Fred Hutchinson Cancer Center
+
+### Consent to take part in a research study:
+
+**PRINCIPAL INVESTIGATOR**: Carrie Wright, PhD, Fred Hutch Cancer Center, email: cwright2@fredhutch.org
+
+Important Things to know about this study:
+
+**PURPOSE**: **The purpose of this research study is to learn about user experience with our case studies** to learn more about how to improve the data science education experience. This includes getting a better understanding of who is using our case studies and how, so that we can better design our case studies. This data may ultimately be used for a research publications. **The study involves taking a survey**. We thank you very much for any feedback! 
+
+**We would like you to join this research study**.
+
+We are doing a research study to examine how people use our case studies, what they like about them, and any challenges they experience. We want to know if we can improve our teaching methods.
+
+Since you are a visitor to our website or case studies, we would like you to join this study.
+
+**QUESTIONS OR PROBLEMS**: If you have questions or problems, email the Principal Investigator Carrie Wright (at the Fred Hutch) at cwright2@fredhutch.org. You can ask any questions you want to help you decide whether to join the study.
+
+**PARTICIPATION**: You must be 18 or over to participate. If you agree to be in this study, you will be asked a series of questions about your experience with the case studies and some general information about you. Participation is voluntary. You can stop participating at any point without penalty. You do not need to answer all of the questions.
+
+**EXPECTED DURATION**: Depending on how you answer the survey, this will take 1-10 minutes to complete. You will have an opportunity at the end of the survey to edit your responses, including removing all of them. Any answers that are ultimately submitted (and not removed by the participant) will continue to be used for research.
+
+**What are the risks?** Risk and discomfort of participation is minimal. If our Google account was hacked, it is possible that someone could attempt to leak this information. However, the questions we ask pose minimal security risk to participants as they are largely about if participants found the case studies useful and do not ask identifying information. You do not need to answer all questions. Only a few questions are required to determine what additional questions to ask.
+
+**What are the benefits?** Although the study will not benefit you directly, we hope the information we learn will help the broader public better understand how to best teach bioinformatics topics. By participating, you help us to improve our resources as well as to inform the broader community about what teaching strategies are most beneficial or desirable to learners. There is no payment for participation nor costs.
+
+### Protecting your Privacy as an Individual and the Confidentiality of Your Personal Information:
+
+We will **not collect any personally identifiable information** about you through this survey for the purposes of this research. We will only ask very general questions about you (such as if you are a student) and your use of the case studies.
+
+If you happen to volunteer identifiable information, we will not use your personal information in any reports about this study, such as journal articles or presentations at scientific meetings.
+
+**Will you pay me to be in this study?** No payment will be given.
+
+**How much will the study cost me?** There are no costs associated.
+
+**What will my information be used for?** Your information will be used for the purposes of this study. Will perform statistical analyses and create data visualizations to identify trends about users of our case studies.
+
+**Will my information ever be use for future research?** It is possible that we might use the data for other research projects in the future related to bioinformatics training, barriers experienced by researchers, or common practices of researchers. If you participate in this study you agree that your data could be used for such purposes in the future.
+
+If we do share your information, we would not be able to stop the future research, even if you asked later. There will be no way to link the information back to you. We will not contact you or otherwise inform you before we share your information for future research.
+
+**DATA SHARING**: We plan to release the data collected from this survey openly online using GitHub (https://github.com/) - however **no personally identifiable information** (such as email addresses) will be shared as it will not be collected. See below for an image of what the data might look like. We will only have a timestamp and answers to your questions. Only a reduced version of the timestamp will be included in the shared data to enhance the anonymity of the participants.
+
+### Your rights
+ 
+- You do not have to join this study. You are free to say “yes” or “no”.
+
+- If you get sick or hurt in this study, you do not lose any of your legal rights by saying "yes" to this form.
+
+- During the study, we might learn new information that you need to know. Other information might make you change your mind about being in this study. If we learn these kinds of information, we would tell you.
+
+- If you join this study, you would not have to stay in it. You could stop at any time (even before you start). You would have no penalty for stopping, but it would be better not to join the study if you think that you would change your mind later.
+
+**CONSENT**: The first questions will ask about your age and if you consent (or agree) that the data from your responses be used for research purposes. By saying yes, you consent.
+
+If you have different thoughts for different case studies, we kindly ask that you submit to our survey more than once.
+
+**TEAM**: Kate Isaac, Ava Hoffman, Steven Salerno, Oshane Thomas, Sarah Teichman
+
+**FUNDING AGENCY**: [National Institute of General Medical Sciences](https://www.nigms.nih.gov/)
+
+**For more information**: You may also contact the Fred Hutch Cancer Center IRB Office if you have questions about your rights as a participant/parent of a study participant. Contact the IRB if you feel you have not been treated fairly or if you have other concerns. An IRB is a group that reviews the study to protect your rights as a research participant. (Phone: 206-667-5900 or Email: irodirector@fredhutch.org Director of Institutional Review Office)
+
+```{r consent_page}
+sd_question(
+  type   = 'mc',
+  id     = 'consent1',
+  label  = "Are you 18 or over? You cannot participate in this survey if you are under 18.",
+  option = c('Yes' = 'yes', 'No'  = 'no')
+)
+
+sd_question(
+  type = 'mc',
+  id = 'consent2',
+  label = "Do you consent to your responses being used for research purposes? Please see the description at the beginning of the survey for more information (use the back button within this survey if you wish to see it again).",
+  option = c('Yes' = 'yes', 'No'  = 'no')
+)
+sd_next()
+```
+:::
+
+::: {id=role_page .sd-page}
+```{r role_page}
+sd_question(
+  type = 'mc',
+  id = 'role',
+  label = "How would you describe yourself (choose best option)? Note that you can say 'wish not to say' for the 'other' category.",
+  option = c(
+    "Educator of Data Science/Stats/Public Health/other - looking for data and education material to use in courses" = 'educator',
+    "Student - using case studies for a course or to help with a course" = 'student',
+    "Self-learner - interested in learning more about the skills, topics, and or concepts covered in the case studies" = 'self_learner',
+    "Other" = 'other'
+  )
+)
+
+sd_question(
+  type = 'text',
+  id = 'role_other',
+  label = "If other, please specify:"
+)
+
+sd_next()
+```
+:::
+
+::: {id=other_role_end .sd-page}
+We would like to know your thoughts about how we can create content to better serve your needs. Please get in touch with us at [opencasestudies@gmail.com](mailto:opencasestudies@gmail.com) if you would like to work with us, are interested in creating a case study, have ideas, or would like to know more. Also check out our website at [www.opencasestudies.org](http://www.opencasestudies.org).
+:::
+
+<!-- ============================================================ -->
+<!-- EDUCATOR BRANCH                                              -->
+<!-- ============================================================ -->
+
+::: {id=educator_main .sd-page}
+
+```{r educator_main_page}
+sd_question(
+  type = 'mc_multiple',
+  id = 'educator_brought',
+  label = "What specifically brought you to the case studies? (select all that apply)",
+  option = c(
+    "General interest in teaching material about statistics" = 'stats_general',
+    "Interested in teaching about a specific statistical topic (paired t-test, regression, etc.)" = 'stats_specific',
+    "General interest in teaching materials about data science/data analysis" = 'ds_general',
+    "Interested in teaching about a specific data science skill (such as creating a dashboard)" = 'ds_specific',
+    "General interest in teaching materials about R programming" = 'r_general',
+    "General interest in teaching materials about the tidyverse" = 'tidyverse_general',
+    "General interest in teaching materials about public health" = 'ph_general',
+    "Interested in teaching about a specific public health topic (such as mental health, obesity etc.)" = 'ph_specific',
+    "General interest in Bioinformatics topics" = 'bioinfo_general',
+    "Interested in specific Bioinformatics topic" = 'bioinfo_specific',
+    "Other" = 'other'
+  )
+)
+
+sd_question(
+  type = 'text',
+  id = 'educator_brought_other',
+  label = "If other, please specify:"
+)
+
+sd_question(
+  type = 'mc_multiple',
+  id = 'student_types',
+  label = "What type of students do you teach? (select all that apply)",
+  option = c(
+    "Graduate students"      = 'graduate',
+    "Undergraduate students" = 'undergraduate',
+    "High school students"   = 'high_school',
+    "Middle school students" = 'middle_school',
+    "Other"                  = 'other'
+  )
+)
+
+sd_question(
+  type = 'text',
+  id = 'student_types_other',
+  label = "If other, please specify:"
+)
+
+# !Change: 1:5 to 1:10 in keeping with typical net promoter score questions
+# Default of 7 means score is thrown out, so ok if they don't answer it
+sd_question(
+  type = 'slider_numeric',
+  id = 'educator_recommend',
+  label = "How likely are you to recommend the case studies to others?<br>(0 = Not at all likely, 10 = Extremely likely)",
+  option = c(0,10,1),
+  default = 7
+)
+
+sd_question(
+  type = 'mc_multiple',
+  id = 'educator_case_studies_seen',
+  label = "What case study(ies) have you looked at? (select all that apply)",
+  option = c(
+    "Obesity: https://www.opencasestudies.org/ocs-bp-rural-and-urban-obesity/" = 'obesity',
+    "Diet: https://www.opencasestudies.org/ocs-bp-diet/" = 'diet',
+    "School shootings: https://www.opencasestudies.org/ocs-bp-school-shootings-dashboard/" = 'school_shootings',
+    "Multicollinearity and RTC laws (wrangling): https://www.opencasestudies.org/ocs-bp-RTC-wrangling/" = 'rtc_wrangling',
+    "Multicollinearity and RTC laws (analysis): https://www.opencasestudies.org/ocs-bp-RTC-analysis/" = 'rtc_analysis',
+    "Predicting air pollution: https://www.opencasestudies.org/ocs-bp-air-pollution/" = 'air_pollution',
+    "CO2 emissions: https://www.opencasestudies.org/ocs-bp-co2-emissions/" = 'co2',
+    "Youth disconnection: https://www.opencasestudies.org/ocs-bp-youth-disconnection/" = 'youth_disconnection',
+    "Youth mental health: https://www.opencasestudies.org/ocs-bp-youth-mental-health/" = 'youth_mental_health',
+    "Opioid shipments in the US: https://www.opencasestudies.org/ocs-bp-opioid-rural-urban/" = 'opioids',
+    "Vaping behaviours among US youths: https://www.opencasestudies.org/ocs-bp-vaping-case-study/" = 'vaping',
+    "None" = 'none',
+    "Other" = 'other'
+  )
+)
+
+sd_question(
+  type = 'text',
+  id = 'educator_case_studies_seen_other',
+  label = "If other, please specify:"
+)
+
+sd_question(
+  type = 'mc',
+  id = 'educator_used_before',
+  label = "Have you already used our case studies or the data from our case studies to teach?",
+  option = c(
+    "Yes"   = 'yes',
+    "No"    = 'no',
+    "Other" = 'other'
+  )
+)
+
+sd_question(
+  type = 'text',
+  id = 'educator_used_before_other',
+  label = "If other, please specify:"
+)
+
+sd_next()
+```
+:::
+
+<!-- ---- USED BEFORE = YES branch ---- -->
+
+<!-- ============================================================ -->
+<!-- END SURVEY / SCREENOUTS                                      -->
+<!-- ============================================================ -->
+
+::: {id=end .sd-page}
+## Thank you for taking this survey!
+```{r end_page}
+sd_close()
+```
+:::
+
+::: {id=consent_screenout .sd-page}
+Thank you for your time. Because you did not consent, we are unable to continue. You may close this window.
+:::
